@@ -1,0 +1,44 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+
+**/nb-configuration.xml
+**/.classpath
+**/.gradle/
+**/.project
+**/.settings/
+**/CREDITS-fml.txt
+**/LICENSE-fml.txt
+**/MinecraftForge-Credits.txt
+**/MinecraftForge-License.txt
+**/README.txt
+**/bin/
+**/build.gradle
+**/eclipse/
+**/forge-1.8-11.14.1.1341-changelog.txt
+**/gradle/
+**/gradlew
+**/gradlew.bat
+**/target/
