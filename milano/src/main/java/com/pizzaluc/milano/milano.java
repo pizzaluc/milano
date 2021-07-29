@@ -2,6 +2,7 @@ package com.pizzaluc.milano;
 
 import com.pizzaluc.milano.blocks.Uranium;
 import com.pizzaluc.milano.items.UraniumItem;
+import com.pizzaluc.milano.world.OreGeneration;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -14,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.RegistryObject;
@@ -49,6 +51,8 @@ public class milano
                                                                                                 new Item.Properties().tab(ItemGroup.TAB_MATERIALS)
                                                                                         ));
 
+    public static final RegistryObject<Item> URANIUM_ITEM2 = ITEMS.register("uraniumitem", UraniumItem::new);
+
 
     public milano() {
         // Register the setup method for modloading
@@ -65,6 +69,8 @@ public class milano
 
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGeneration::generateOres);
     }
 
     private void setup(final FMLCommonSetupEvent event)
