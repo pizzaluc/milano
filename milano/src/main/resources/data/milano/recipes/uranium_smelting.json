@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "milano:uranium"
+  },
+  "result": "milano:uraniumitem",
+  "experience": 0.15,
+  "cookingtime": 200
+}

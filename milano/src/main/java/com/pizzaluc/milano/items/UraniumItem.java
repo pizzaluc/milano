@@ -14,7 +14,7 @@ public class UraniumItem extends Item {
     public UraniumItem() {
         super(new Item.Properties()
                 .tab(ItemGroup.TAB_MATERIALS)
-                .stacksTo(1));
+                .stacksTo(64));
     }
 
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit){
