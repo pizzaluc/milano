@@ -51,7 +51,7 @@ public class milano
                                                                                                 new Item.Properties().tab(ItemGroup.TAB_MATERIALS)
                                                                                         ));
 
-    public static final RegistryObject<Item> URANIUM_ITEM2 = ITEMS.register("uraniumitem", UraniumItem::new);
+    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", UraniumItem::new);
 
 
     public milano() {

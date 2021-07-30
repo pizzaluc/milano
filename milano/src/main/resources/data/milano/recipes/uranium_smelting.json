@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "milano:uranium"
   },
-  "result": "milano:uraniumitem",
+  "result": "milano:uranium_ingot",
   "experience": 0.15,
   "cookingtime": 200
 }
