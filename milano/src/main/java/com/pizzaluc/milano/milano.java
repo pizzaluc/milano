@@ -1,27 +1,16 @@
 package com.pizzaluc.milano;
 
-<<<<<<< HEAD
 import com.pizzaluc.milano.blocks.CounterBlock;
 import com.pizzaluc.milano.blocks.CounterTileEntity;
-import com.pizzaluc.milano.blocks.Uranium;
-import com.pizzaluc.milano.items.UraniumItem;
-=======
 import com.pizzaluc.milano.blocks.UraniumOre;
 import com.pizzaluc.milano.items.UraniumIngot;
->>>>>>> 29c0c26278f23401d205f78e19d76be29ce9d503
 import com.pizzaluc.milano.world.OreGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-<<<<<<< HEAD
-import net.minecraft.loot.LootTable;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.ResourceLocation;
-=======
->>>>>>> 29c0c26278f23401d205f78e19d76be29ce9d503
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -39,7 +28,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.w3c.dom.css.Counter;
 
 import java.util.stream.Collectors;
 
