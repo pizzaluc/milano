@@ -1,5 +1,7 @@
 package com.pizzaluc.milano;
 
+import com.pizzaluc.milano.blocks.CounterBlock;
+import com.pizzaluc.milano.blocks.CounterTileEntity;
 import com.pizzaluc.milano.blocks.Uranium;
 import com.pizzaluc.milano.items.UraniumItem;
 import com.pizzaluc.milano.world.OreGeneration;
@@ -11,6 +13,8 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.loot.LootTable;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
@@ -30,6 +34,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.w3c.dom.css.Counter;
 
 import java.util.stream.Collectors;
 
@@ -44,14 +49,25 @@ public class milano
 
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MODID);
 
     public static final RegistryObject<Block> URANIUM = BLOCKS.register("uranium", Uranium::new);
+    public static final RegistryObject<Block> COUNTER = BLOCKS.register("counter", CounterBlock::new);
+
     public static final RegistryObject<Item> URANIUM_ITEM = ITEMS.register("uranium", () ->
                                                                                         new BlockItem(URANIUM.get(),
                                                                                                 new Item.Properties().tab(ItemGroup.TAB_MATERIALS)
                                                                                         ));
 
+    public static final RegistryObject<Item> COUNTER_ITEM = ITEMS.register("counter", () ->
+            new BlockItem(COUNTER.get(),
+                    new Item.Properties().tab(ItemGroup.TAB_MATERIALS)
+            ));
+
     public static final RegistryObject<Item> URANIUM_ITEM2 = ITEMS.register("uraniumitem", UraniumItem::new);
+
+    public static final RegistryObject<TileEntityType<CounterTileEntity>> COUNTER_TE = TILES.register("counter", () -> TileEntityType.Builder.of(CounterTileEntity::new, COUNTER.get()).build(null));
+
 
 
     public milano() {
@@ -69,6 +85,7 @@ public class milano
 
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGeneration::generateOres);
     }
