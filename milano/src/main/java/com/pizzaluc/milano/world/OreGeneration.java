@@ -1,6 +1,5 @@
 package com.pizzaluc.milano.world;
 
-import com.pizzaluc.milano.blocks.Uranium;
 import com.pizzaluc.milano.milano;
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;

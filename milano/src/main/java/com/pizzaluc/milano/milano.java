@@ -1,23 +1,28 @@
 package com.pizzaluc.milano;
 
+<<<<<<< HEAD
 import com.pizzaluc.milano.blocks.CounterBlock;
 import com.pizzaluc.milano.blocks.CounterTileEntity;
 import com.pizzaluc.milano.blocks.Uranium;
 import com.pizzaluc.milano.items.UraniumItem;
+=======
+import com.pizzaluc.milano.blocks.UraniumOre;
+import com.pizzaluc.milano.items.UraniumIngot;
+>>>>>>> 29c0c26278f23401d205f78e19d76be29ce9d503
 import com.pizzaluc.milano.world.OreGeneration;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+<<<<<<< HEAD
 import net.minecraft.loot.LootTable;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
+=======
+>>>>>>> 29c0c26278f23401d205f78e19d76be29ce9d503
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -51,8 +56,10 @@ public class milano
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MODID);
 
-    public static final RegistryObject<Block> URANIUM = BLOCKS.register("uranium", Uranium::new);
+
     public static final RegistryObject<Block> COUNTER = BLOCKS.register("counter", CounterBlock::new);
+
+    public static final RegistryObject<Block> URANIUM = BLOCKS.register("uranium", UraniumOre::new);
 
     public static final RegistryObject<Item> URANIUM_ITEM = ITEMS.register("uranium", () ->
                                                                                         new BlockItem(URANIUM.get(),
@@ -64,7 +71,7 @@ public class milano
                     new Item.Properties().tab(ItemGroup.TAB_MATERIALS)
             ));
 
-    public static final RegistryObject<Item> URANIUM_ITEM2 = ITEMS.register("uraniumitem", UraniumItem::new);
+    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", UraniumIngot::new);
 
     public static final RegistryObject<TileEntityType<CounterTileEntity>> COUNTER_TE = TILES.register("counter", () -> TileEntityType.Builder.of(CounterTileEntity::new, COUNTER.get()).build(null));
 
