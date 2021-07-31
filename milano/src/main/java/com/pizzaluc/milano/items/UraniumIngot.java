@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.MapItem;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -17,12 +18,6 @@ public class UraniumIngot extends Item {
         super(new Item.Properties()
                 .tab(ItemGroup.TAB_MATERIALS)
                 .stacksTo(64));
-    }
-
-    public ActionResult<ItemStack> use(World worldIn, PlayerEntity player, Hand handIn){
-        ItemStack itemstack = player.getItemInHand(handIn);
-        System.out.println("lol");
-        return ActionResult.success(itemstack);
     }
 
 
