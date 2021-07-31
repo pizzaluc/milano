@@ -12,8 +12,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
-public class UraniumItem extends Item {
-    public UraniumItem() {
+public class UraniumIngot extends Item {
+    public UraniumIngot() {
         super(new Item.Properties()
                 .tab(ItemGroup.TAB_MATERIALS)
                 .stacksTo(64));

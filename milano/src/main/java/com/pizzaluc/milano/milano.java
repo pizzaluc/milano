@@ -1,19 +1,14 @@
 package com.pizzaluc.milano;
 
-import com.pizzaluc.milano.blocks.Uranium;
-import com.pizzaluc.milano.items.UraniumItem;
+import com.pizzaluc.milano.blocks.UraniumOre;
+import com.pizzaluc.milano.items.UraniumIngot;
 import com.pizzaluc.milano.world.OreGeneration;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.loot.LootTable;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,13 +40,13 @@ public class milano
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    public static final RegistryObject<Block> URANIUM = BLOCKS.register("uranium", Uranium::new);
+    public static final RegistryObject<Block> URANIUM = BLOCKS.register("uranium", UraniumOre::new);
     public static final RegistryObject<Item> URANIUM_ITEM = ITEMS.register("uranium", () ->
                                                                                         new BlockItem(URANIUM.get(),
                                                                                                 new Item.Properties().tab(ItemGroup.TAB_MATERIALS)
                                                                                         ));
 
-    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", UraniumItem::new);
+    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", UraniumIngot::new);
 
 
     public milano() {
