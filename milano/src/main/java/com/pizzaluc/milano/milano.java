@@ -4,6 +4,7 @@ import com.pizzaluc.milano.blocks.CounterBlock;
 import com.pizzaluc.milano.blocks.CounterTileEntity;
 import com.pizzaluc.milano.blocks.UraniumOre;
 import com.pizzaluc.milano.items.DeathStick;
+import com.pizzaluc.milano.items.Gun;
 import com.pizzaluc.milano.items.UraniumIngot;
 import com.pizzaluc.milano.world.OreGeneration;
 import net.minecraft.block.Block;
@@ -62,6 +63,7 @@ public class milano
 
     public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", UraniumIngot::new);
     public static final RegistryObject<Item> MAGIC_STICK = ITEMS.register("death_stick", DeathStick::new);
+    public static final RegistryObject<Item> GUN = ITEMS.register("gun", Gun::new);
 
     public static final RegistryObject<TileEntityType<CounterTileEntity>> COUNTER_TE = TILES.register("counter", () -> TileEntityType.Builder.of(CounterTileEntity::new, COUNTER.get()).build(null));
 
